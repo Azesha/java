@@ -1,0 +1,188 @@
+1. Explore about getClass() method ?
+
+getClass() is the method of Object class. This method returns the runtime class of this object. 
+The class object which is returned is the object that is locked by static synchronized method of the represented class.
+
+
+
+2.Diff between "==" and .equals() ?
+In general, both equals() and “==” operator in Java are used to compare objects to check equality but here are some of the differences between the two 
+In simple words, == checks if both objects point to the same memory location whereas . equals() evaluates to the comparison of values in the objects.
+
+
+
+
+3.Explore Throwable class,exception class,Error class ?
+
+The class at the top of the exception class hierarchy is the Throwable class,
+ which is a direct subclass of the Object class. Throwable has two direct subclasses - Exception and Error.
+
+The Exception class is used for exception conditions that the application may need to handle. 
+Examples of exceptions include IllegalArgumentException, ClassNotFoundException and NullPointerException.
+
+The Error class is used to indicate a more serious problem in the architecture and should not be handled in the application code.
+ Examples of errors include InternalError, OutOfMemoryError and AssertionError.
+
+
+
+
+
+4.list out all the classes under exception classes ?
+
+ArithmeticException 
+It is thrown when an exceptional condition has occurred in an arithmetic operation.
+
+ArrayIndexOutOfBoundsException 
+It is thrown to indicate that an array has been accessed with an illegal index. 
+The index is either negative or greater than or equal to the size of the array.
+
+ClassNotFoundException 
+This Exception is raised when we try to access a class whose definition is not found
+
+FileNotFoundException 
+This Exception is raised when a file is not accessible or does not open.
+
+IOException 
+It is thrown when an input-output operation failed or interrupted
+
+InterruptedException 
+It is thrown when a thread is waiting, sleeping, or doing some processing, and it is interrupted.
+
+NoSuchFieldException 
+It is thrown when a class does not contain the field (or variable) specified
+
+NoSuchMethodException 
+It is thrown when accessing a method which is not found.
+
+NullPointerException 
+This exception is raised when referring to the members of a null object. Null represents nothing
+
+NumberFormatException 
+This exception is raised when a method could not convert a string into a numeric format.
+
+RuntimeException 
+This represents any exception which occurs during runtime.
+
+StringIndexOutOfBoundsException 
+It is thrown by String class methods to indicate that an index is either negative or greater than the size of the string
+
+
+
+
+
+
+
+
+5. explore method present in collection interface,list interface,set interface,queue interface ?
+
+The Collection interface contains methods that perform basic operations, such as int size() , 
+boolean isEmpty() , boolean contains(Object element) , boolean add(E element) , boolean remove(Object element) , and Iterator<E> iterator() .
+
+void add(int index, E element)-It is used to insert the specified element at the specified position in a list.
+
+boolean add(E e)-It is used to append the specified element at the end of a list.
+
+boolean addAll(int index, Collection<? extends E> c)-It is used to append all the elements in the specified collection,
+ starting at the specified position of the list.
+
+void clear()-It is used to remove all of the elements from this list.
+
+boolean equals(Object o)-It is used to compare the specified object with the elements of a list.
+
+int hashcode()-It is used to return the hash code value for a list.
+
+get(int index)-It is used to fetch the element from the particular position of the list.
+
+boolean isEmpty()-It returns true if the list is empty, otherwise false.
+
+int lastIndexOf(Object o)-It is used to return the index in this list of the last occurrence of the specified element,
+ or -1 if the list does not contain this element.
+
+boolean contains(Object o)-It returns true if the list contains the specified element
+
+boolean containsAll(Collection<?> c)-It returns true if the list contains all the specified element
+
+int indexOf(Object o)-It is used to return the index in this list of the first occurrence of the specified element, 
+or -1 if the List does not contain this element.
+
+E remove(int index)-It is used to remove the element present at the specified position in the list.	
+
+boolean remove(Object o)-It is used to remove the first occurrence of the specified element.
+	
+boolean removeAll(Collection<?> c)-It is used to remove all the elements from the list.	
+
+void replaceAll()-It is used to replace all the elements from the list with the specified element.
+		
+void sort(Comparator<? super E> c)	It is used to sort the elements of the list on the basis of specified comparator.
+
+
+
+
+Methods in list iterator ?
+
+The previous() will return to the previous elements and the next() will return to the next element.
+ Therefore, for a list of n length, there are n+1 possible cursors.	
+
+7.stack and vector
+Stack is a subclass of Vector that implements a standard last-in, first-out stack.
+
+Stack only defines the default constructor, which creates an empty stack. Stack includes all the methods defined by Vector, and adds several of its own.
+
+boolean empty()
+
+Tests if this stack is empty. Returns true if the stack is empty, and returns false if the stack contains elements.
+
+	
+Object peek( )
+Returns the element on the top of the stack, but does not remove it.
+
+	
+Object pop( )
+Returns the element on the top of the stack, removing it in the process.
+
+	
+Object push(Object element)
+Pushes the element onto the stack. Element is also returned.
+
+	
+int search(Object element)
+Searches for element in the stack. If found, its offset from the top of the stack is returned. Otherwise, -1 is returned.
+
+why map does not belong to collection ?
+
+Map is a key/value pair whereas Collection is a collection of a group of objects stored in a structured manner and has a specified access mechanism.
+ The reason why Map doesn't extend Collections interface is that add(E e); doesn't cater the key value pair like Map's put(K, V) .
+
+methods of map ?
+
+V put(Object key, Object value)-It is used to insert an entry in the map.
+
+void putAll(Map map)-It is used to insert the specified map in the map.
+
+V putIfAbsent(K key, V value)-It inserts the specified value with the specified key in the map only if it is not already specified.
+
+V remove(Object key)-It is used to delete an entry for the specified key.
+
+boolean remove(Object key, Object value)-It removes the specified values with the associated specified keys from the map.
+Set keySet()-It returns the Set view containing all the keys.
+
+Set<Map.Entry<K,V>> entrySet()-It returns the Set view containing all the keys and values.
+
+void clear()-It is used to reset the map.
+
+V computeIfAbsent(K key, Function<? super K,? extends V> mappingFunction)-It is used to compute its value using the given mapping function,
+ if the specified key is not already associated with a value (or is mapped to null), and enters it into this map unless null.
+
+V computeIfPresent(K key, BiFunction<? super K,? super V,? extends V> remappingFunction)-It is used to compute a new mapping given the key and
+ its current mapped value if the value for the specified key is present and non-null.
+
+boolean containsValue(Object value)-This method returns true if some value equal to the value exists within the map, else return false.
+
+boolean containsKey(Object key)	This method returns true if some key equal to the key exists within the map, else return false.
+
+boolean equals(Object o)-It is used to compare the specified Object with the Map.
+
+void forEach(BiConsumer<? super K,? super V> action)-It performs the given action for each entry in the map until all
+ entries have been processed or the action throws an exception.
+
+
