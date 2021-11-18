@@ -1,0 +1,136 @@
+Enter password: ****
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 17
+Server version: 8.0.27 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2021, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> use hardware;
+Database changed
+mysql> create table electronic_items(product_id int(3) not null,
+    -> p_name varchar(20) not null,
+    -> cost double,
+    -> date_of_m date not null,
+    -> warranty int(2) not null
+    -> );
+Query OK, 0 rows affected, 2 warnings (1.70 sec)
+
+mysql> insert into table electronic_items values(001,'mobile',20000,'2021-11-18',2);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'table electronic_items values(001,'mobile',20000,'2021-11-18',2)' at line 1
+mysql> insert into electronic_items values(001,'mobile',20000,'2021-11-18',2);
+Query OK, 1 row affected (0.15 sec)
+
+mysql> insert into electronic_items values(002,'AC',20000,'2021-11-18',2);
+Query OK, 1 row affected (0.17 sec)
+
+mysql> insert into electronic_items values(002,'Micro Oven',10000,'2021-11-18',1);
+Query OK, 1 row affected (0.09 sec)
+
+mysql> insert into electronic_items values(002,'TV',100000,'2021-01-18',3);
+Query OK, 1 row affected (0.14 sec)
+
+mysql> insert into electronic_items values(002,'Hair straightner',100000,'2021-11-18',3);
+Query OK, 1 row affected (0.13 sec)
+
+mysql> insert into electronic_items values(002,'laptop',1100000,'2020-11-18',3);
+Query OK, 1 row affected (0.25 sec)
+
+mysql> select * from electronic_items where p_name like '%m%';
++------------+------------+-------+------------+----------+
+| product_id | p_name     | cost  | date_of_m  | warranty |
++------------+------------+-------+------------+----------+
+|          1 | mobile     | 20000 | 2021-11-18 |        2 |
+|          2 | Micro Oven | 10000 | 2021-11-18 |        1 |
++------------+------------+-------+------------+----------+
+2 rows in set (0.00 sec)
+
+mysql> alter table electronic_items
+    -> add column c_name;
+
+mysql> alter table electronic_items
+    -> add column c_name varchar(20);
+Query OK, 0 rows affected (2.15 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> update electronic_items set c_name ='azesha';
+Query OK, 6 rows affected (0.13 sec)
+Rows matched: 6  Changed: 6  Warnings: 0
+
+
+mysql>  update electronic_items set c_name ='sandy';
+Query OK, 6 rows affected (0.13 sec)
+Rows matched: 6  Changed: 6  Warnings: 0
+
+mysql>  update electronic_items set c_name ='manisha';
+Query OK, 6 rows affected (0.12 sec)
+Rows matched: 6  Changed: 6  Warnings: 0
+
+mysql>  update electronic_items set c_name ='sandy';
+Query OK, 6 rows affected (0.06 sec)
+Rows matched: 6  Changed: 6  Warnings: 0
+
+mysql>  update electronic_items set c_name ='suman';
+Query OK, 6 rows affected (0.06 sec)
+Rows matched: 6  Changed: 6  Warnings: 0
+
+mysql>  update electronic_items set c_name ='suman' where p_name = 'mobile' ;
+Query OK, 0 rows affected (0.00 sec)
+Rows matched: 1  Changed: 0  Warnings: 0
+
+mysql>  update electronic_items set c_name ='azesha' where p_name = 'AC' ;
+Query OK, 1 row affected (0.16 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql>  update electronic_items set c_name ='ayesha' where p_name = 'Micro Oven' ;
+Query OK, 1 row affected (0.11 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql>  update electronic_items set c_name ='tapu' where p_name = 'TV' ;
+Query OK, 1 row affected (0.09 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql>  update electronic_items set c_name ='roza' where p_name = 'Hair straightner' ;
+Query OK, 1 row affected (0.11 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql>  update electronic_items set c_name ='roza' where p_name = 'laptop' ;
+Query OK, 1 row affected (0.08 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> rename table electronic_items to electronic_item;
+Query OK, 0 rows affected (1.16 sec)
+
+
+
+mysql> alter table electronic_item rename c_name to c_names;
+
+mysql> alter table electronic_item rename column c_name to c_names;
+Query OK, 0 rows affected (0.87 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+Difference between RDBMS and DBMS
+
+Database Management System (DBMS) is a software that is used to define, create and maintain a database and provides controlled access to the data. 
+
+Relational Database Management System (RDBMS) is an advanced version of a DBMS. 
+
+Here is the list of top 10 most popular RDBMSs are:
+Oracle
+MySQL
+SQL Server
+PostgreSQL
+IBM DB2
+Microsoft Access
+SQLite
+MariaDB
+Informix
+Azure SQL
+
+
+
